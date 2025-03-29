@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { RefreshCw } from "lucide-react";
 
 const WeatherCard = ({ weather, fetchWeather }) => {
-    if (!weather) return null; // Don't render if no data
+    if (!weather) return null; // only render if weather data is available
 
 
     const temp = weather.main.temp; // Determine the background color based on temperature

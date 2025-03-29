@@ -93,7 +93,7 @@ function App() {
             </div>
             {showInfo && (
               <div className="mt-3 bg-white text-gray-900 p-3 rounded-lg shadow-md w-64 text-center text-sm font-semibold">
-                🌡️ The weather card changes color based on temperature.
+                🌡️ The weather card changes color based on city temperature.
               </div>
             )}
           </div>
