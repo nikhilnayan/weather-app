@@ -29,10 +29,10 @@ const WeatherCard = ({ weather, fetchWeather }) => {
 
 
             <img
-                src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}  {/* Weather Icon */}
+                src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}
                 alt="Weather icon"
                 className="w-24 mx-auto"
-            />
+            />                                                                                  {/* Weather Icon */}
 
 
             <p className="text-4xl font-semibold">{weather.main.temp}°C</p> {/* Temperature */}
