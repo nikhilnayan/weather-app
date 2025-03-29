@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
 const ForecastCard = ({ forecast }) => {
-  if (!forecast || forecast.length === 0) return null;
+  if (!forecast || forecast.length === 0) return null; // only render if forecast data is available
 
   return (
     <div className="mt-6 w-full max-w-2xl">

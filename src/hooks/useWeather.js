@@ -18,23 +18,23 @@ export const useWeather = () => {
         try {
             console.log("Fetching weather for:", city);
 
-            // Fetch Current Weather
+
             const weatherResponse = await axios.get(
-                `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
+                `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`  // Fetch Current Weather
             );
 
-            // Fetch 5-Day Forecast
+
             const forecastResponse = await axios.get(
-                `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}&units=metric`
+                `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}&units=metric`  // Fetch 5-Day Forecast
             );
 
             console.log("Weather Response:", weatherResponse.data);
             console.log("Forecast Response:", forecastResponse.data);
 
             setWeather(weatherResponse.data);
-            
-            // Extract one forecast per day (~12:00 PM)
-            const dailyForecast = forecastResponse.data.list.filter((_, index) => index % 8 === 0);
+
+
+            const dailyForecast = forecastResponse.data.list.filter((_, index) => index % 8 === 0);  // Extract one forecast per day (~12:00 PM) (the API returns 8 forecasts per day)
             setForecast(dailyForecast);
         } catch (err) {
             console.error("API Error:", err.response?.data || err);
